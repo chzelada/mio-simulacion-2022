@@ -1,7 +1,7 @@
 ## Paradoja del cumpleañero
 
 ### exploracion
-N <- 20
+N <- 40
 grupo <- sample(1:364,N,replace=TRUE)
 
 vgrupo <- as.vector(table(grupo))
