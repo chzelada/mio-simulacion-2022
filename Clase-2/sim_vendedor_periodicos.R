@@ -49,7 +49,7 @@ mean(n_meses)
 
 n_meses <- function(oferta,nsim){
   sim <- sapply(1:nsim,'simular_mes',oferta=oferta)
-  return(mean(sim))
+  return(mean(sim) )
 }
 
 ganacia_promedia <- sapply((4:10)*10, n_meses, nsim=5000)
@@ -57,4 +57,23 @@ ganacia_promedia <- sapply((4:10)*10, n_meses, nsim=5000)
 plot((4:10)*10,ganacia_promedia)
 
 View(data.frame(oferta=(4:10)*10, ganacia_promedia))
+
+n_meses_vec <- function(oferta,nsim){
+  sim <- sapply(1:nsim,'simular_mes',oferta=oferta)
+  return(sim )
+}
+
+sv1 <- n_meses_vec(40,5000)
+sv2 <- n_meses_vec(50,5000)
+sv3 <- n_meses_vec(70,5000)
+sv4 <- n_meses_vec(80,5000)
+sv5 <- n_meses_vec(60,5000)
+
+plot(sv1, ylim = c(10,200),col='blue')
+points(sv2,col='blueviolet')
+points(sv3,col='burlywood2')
+points(sv4,col='darkolivegreen4')
+points(sv5,col='red')
+
+
 
